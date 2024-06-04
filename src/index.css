@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.control-panel {
+  background-color: white;
+  padding: 10px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
