@@ -1,6 +1,6 @@
 import Canvas from './Canvas';
 import Clock from './Clock';
-import Controller from './Controller';
+import Control from './Control';
 import { Setting } from './definitions';
 
 const setting: Setting = {
@@ -13,7 +13,7 @@ export default function App(): JSX.Element {
 
   return (
     <div>
-      <Controller setting={setting} />
+      <Control setting={setting} />
       <Canvas setting={setting} />
       <Clock />
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Setting } from './definitions';
 
-export default function Controller({ setting, }: { setting : Setting; }) {
+export default function Control({ setting, }: { setting : Setting; }) {
     const [color, setColor] = useState(setting.color);
     const [speed, setSpeed] = useState(setting.speed);
     const [isDark, setIsDark] = useState(true);
