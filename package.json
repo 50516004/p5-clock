@@ -2,6 +2,7 @@
   "name": "p5",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://50516004.github.io/p5-clock/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -21,7 +22,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rm": "powershell -Command \"Remove-Item -Recurse -Force docs\"",
+    "mv": "powershell -Command \"Move-Item -Path build -Destination docs\"",
+    "git": "powershell -Command \"git add .; git commit -m 'deploy'; git push origin master\"",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
   "eslintConfig": {
     "extends": [
