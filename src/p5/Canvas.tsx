@@ -1,19 +1,32 @@
 import p5 from 'p5';
-import { Setting } from './definitions';
+import { Ball, Setting } from './definitions';
 import useP5 from './useP5';
 
 export default function Canvas({ setting }: { setting: Setting }) {
 
     const canvasRef = useP5(sketch);
 
+    function bgColor() {
+        return setting.isDark ? "#282c34" : "white";
+    }
+
     function sketch(p: p5): void {
-        let x = 0;
-        let y = 0;
-        let dir_x = 1;
-        let dir_y = 1;
+
+        const balls: Ball[] = [];
 
         p.setup = function () {
             p.createCanvas(p.windowWidth - 5, p.windowHeight - 5);
+            p.colorMode(p.HSB, 360, 100, 100);
+
+            for (let index = 0; index < 10; index++) {
+                const ball = {
+                    x: p.random(0, p.width),
+                    y: p.random(0, p.height),
+                    dir_x: p.random(-1, 1),
+                    dir_y: p.random(-1, 1),
+                };
+                balls.push(ball);
+            }
         };
 
         p.windowResized = function () {
@@ -21,20 +34,24 @@ export default function Canvas({ setting }: { setting: Setting }) {
         };
 
         p.draw = function () {
-            p.background(setting.background);
+            p.background(bgColor());
             p.fill(setting.color);
             p.noStroke();
-            p.ellipse(x, y, 100, 100);
 
-            x += setting.speed * dir_x;
-            if (x > p.width || x < 0) {
-                dir_x *= -1;
+            for (const ball of balls) {
+                ball.x += setting.speed * ball.dir_x;
+                if (ball.x > p.width || ball.x < 0) {
+                    ball.dir_x *= -1;
+                }
+    
+                ball.y += setting.speed * ball.dir_y;
+                if (ball.y > p.height || ball.y < 0) {
+                    ball.dir_y *= -1;
+                }
+
+                p.ellipse(ball.x, ball.y, 100, 100);
             }
 
-            y += setting.speed * dir_y;
-            if (y > p.height || y < 0) {
-                dir_y *= -1;
-            }
         };
     }
 

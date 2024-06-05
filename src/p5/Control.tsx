@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { Setting } from './definitions';
 
-export default function Control({ setting, }: { setting : Setting; }) {
+type ControlArgs = {
+    setting : Setting;
+    isDark : boolean;
+    setIsDark : (b:boolean)=>void
+}
+
+export default function Control({ setting, isDark, setIsDark }: ControlArgs) {
     const [color, setColor] = useState(setting.color);
     const [speed, setSpeed] = useState(setting.speed);
-    const [isDark, setIsDark] = useState(true);
 
     return (
         <div className='control-panel'>
@@ -25,8 +30,8 @@ export default function Control({ setting, }: { setting : Setting; }) {
                     setSpeed(setting.speed);
                 }} />
             <button onClick={() => {
-                setting.background = isDark ? "white" : "#282c34";
-                setIsDark(!isDark);
+                setting.isDark = !isDark;
+                setIsDark(setting.isDark);
             }}>{isDark ? "Light" : "Dark"}</button>
         </div>
     );

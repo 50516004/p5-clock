@@ -36,5 +36,5 @@ function formatDate(timestamp: number) {
     const seconds = String(date.getSeconds()).padStart(2, '0');
     const dayOfWeek = daysOfWeek[date.getDay()];
 
-    return `${year}/${month}/${day}(${dayOfWeek}) ${hours}:${minutes}:${seconds}`;
+    return `${year}/${month}/${day}(${dayOfWeek})${hours}:${minutes}:${seconds}`;
 }
