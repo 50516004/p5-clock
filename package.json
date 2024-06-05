@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "rm": "powershell -Command \"Remove-Item -Recurse -Force docs\"",
     "mv": "powershell -Command \"Move-Item -Path build -Destination docs\"",
-    "git": "powershell -Command \"git add .; git commit -m 'deploy'; git push origin master\"",
+    "git": "powershell -Command \"git pull origin master; git add .; git commit -m 'deploy'; git push origin master\"",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
   "eslintConfig": {
