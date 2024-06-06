@@ -10,4 +10,6 @@ export type Ball = {
     y: number;
     dir_x: number;
     dir_y: number;
+    color: string;
+    size: number;
 }

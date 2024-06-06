@@ -8,7 +8,7 @@ const setting: Setting = {
   background: "#282c34",
   color: "#7fffd4",
   speed: 1,
-  isDark: true,
+  isDark: false,
 };
 
 export default function App(): JSX.Element {

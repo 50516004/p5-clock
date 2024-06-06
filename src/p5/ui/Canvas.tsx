@@ -16,7 +16,7 @@ export default function Canvas({ setting }: { setting: Setting }) {
 
         p.setup = function () {
             p.createCanvas(p.windowWidth - 5, p.windowHeight - 5);
-            p.colorMode(p.HSB, 360, 100, 100);
+            p.colorMode(p.HSB, 360, 100, 100, 100);
 
             for (let index = 0; index < 10; index++) {
                 const ball = {
@@ -24,6 +24,8 @@ export default function Canvas({ setting }: { setting: Setting }) {
                     y: p.random(0, p.height),
                     dir_x: p.random(-1, 1),
                     dir_y: p.random(-1, 1),
+                    color: p.color(p.random(360), 100, 100, 80).toString(),
+                    size: p.random(30, 200),
                 };
                 balls.push(ball);
             }
@@ -35,7 +37,6 @@ export default function Canvas({ setting }: { setting: Setting }) {
 
         p.draw = function () {
             p.background(bgColor());
-            p.fill(setting.color);
             p.noStroke();
 
             for (const ball of balls) {
@@ -49,7 +50,8 @@ export default function Canvas({ setting }: { setting: Setting }) {
                     ball.dir_y *= -1;
                 }
 
-                p.ellipse(ball.x, ball.y, 100, 100);
+                p.fill(ball.color);
+                p.ellipse(ball.x, ball.y, ball.size, ball.size);
             }
 
         };
