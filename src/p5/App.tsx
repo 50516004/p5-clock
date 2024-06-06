@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Canvas from './Canvas';
-import Clock from './Clock';
-import Control from './Control';
-import { Setting } from './definitions';
+import { Setting } from './lib/definitions';
+import Canvas from './ui/Canvas';
+import Clock from './ui/Clock';
+import Control from './ui/Control';
 
 const setting: Setting = {
   background: "#282c34",

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Setting } from './definitions';
+import { Setting } from '../lib/definitions';
 
 type ControlArgs = {
     setting : Setting;

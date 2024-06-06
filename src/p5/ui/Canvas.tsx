@@ -1,6 +1,6 @@
 import p5 from 'p5';
-import { Ball, Setting } from './definitions';
-import useP5 from './useP5';
+import { Ball, Setting } from '../lib/definitions';
+import useP5 from '../lib/useP5';
 
 export default function Canvas({ setting }: { setting: Setting }) {
 
