@@ -24,7 +24,7 @@ export default function App(): JSX.Element {
 
 function Hud() {
 
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(setting.isDark);
 
   return (
     <>

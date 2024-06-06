@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Clock({color = "white"}) {
+export default function Clock({color = "#282c34"}) {
 
     const [now, setNow] = useState(Date.now());
 
@@ -18,7 +18,7 @@ export default function Clock({color = "white"}) {
     };
 
     return (
-        <h1 className="centered" style={style}>
+        <h1 className="clock" style={style}>
             {formatDate(now)}
         </h1>
     );

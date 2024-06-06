@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/p5-clock/static/css/main.d0645ae3.css",
-    "main.js": "/p5-clock/static/js/main.80968c2c.js",
+    "main.css": "/p5-clock/static/css/main.96ec91ab.css",
+    "main.js": "/p5-clock/static/js/main.72c4c253.js",
     "index.html": "/p5-clock/index.html",
-    "main.d0645ae3.css.map": "/p5-clock/static/css/main.d0645ae3.css.map",
-    "main.80968c2c.js.map": "/p5-clock/static/js/main.80968c2c.js.map"
+    "main.96ec91ab.css.map": "/p5-clock/static/css/main.96ec91ab.css.map",
+    "main.72c4c253.js.map": "/p5-clock/static/js/main.72c4c253.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0645ae3.css",
-    "static/js/main.80968c2c.js"
+    "static/css/main.96ec91ab.css",
+    "static/js/main.72c4c253.js"
   ]
 }
