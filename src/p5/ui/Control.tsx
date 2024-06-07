@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Setting } from '../lib/definitions';
 
-type ControlArgs = {
+type ControlProps = {
     setting : Setting;
     isDark : boolean;
     setIsDark : (b:boolean)=>void
 }
 
-export default function Control({ setting, isDark, setIsDark }: ControlArgs) {
+export default function Control({ setting, isDark, setIsDark }: ControlProps) {
     const [color, setColor] = useState(setting.color);
     const [speed, setSpeed] = useState(setting.speed);
 
